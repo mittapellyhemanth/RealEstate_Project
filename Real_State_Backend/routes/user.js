@@ -27,6 +27,18 @@ userRouter.post("/v1/register",async (req, res) => {
     }
 
     const { email, password } = req.body;
+
+    const minLength = 8; // Minimum password length requirement
+    const specialCharacters = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/; // Regular expression for special characters
+  
+    if (!password || password.length < minLength) {
+      return res.json({ error: 'Password must be at least 8 characters' });
+    }
+  
+    if (!specialCharacters.test(password)) {
+      return res.json({ error: 'Password must contain at least one special character' });
+    }
+    
     bcrypt.hash(password, 10).then(hashPass => { // encrypting password  times with bcrypt
        
         const userData = new User({

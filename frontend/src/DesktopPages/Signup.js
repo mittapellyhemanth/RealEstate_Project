@@ -43,10 +43,20 @@ const[sucess,setSucess] = useState('')
         }
       )
       .then((res) => {
-        setSucess("Successfully Account Created")
-        // alert();
-        navigate("/");
-        Setloader(false)
+        // console.log(res,res.data.error)
+        const err = res.data.error; 
+        if(err){
+          Setloader(false)
+      return setError(err)
+       
+        }
+        if(res.status === 200){
+          setSucess("Successfully Account Created")
+          // alert();
+          navigate("/");
+          Setloader(false)
+        }
+      
       })
       .catch((err) => {
         setError("Email already exist")
