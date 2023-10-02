@@ -1,0 +1,22 @@
+.container{
+    display: "flex";
+    justify-content : "space-between";
+    align-items: center;
+    color: "#bcbcbc";
+    font-size: 10px;
+    font-weight: 300px;
+    padding: 10px;
+    margin-top: 20px;
+    
+}
+a{
+    text-decoration: none;
+}
+p{
+    color: "#bcbcbc"
+}
+hr{
+    margin-bottom: 30px;
+    border-top: 3px solid rgb(225, 249, 244);
+    background-color: "e1f9f4";
+}

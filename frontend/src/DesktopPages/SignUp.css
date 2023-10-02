@@ -1,0 +1,30 @@
+body {
+    background-color: #fbfbfb;
+  }
+.sinup-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.SignUp{
+    /* border: 1px solid gray; */
+    align-items: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+input{
+    padding: 10px;
+}
+.sucess{
+    color:green;
+}
+/* tr {
+    color: white;
+} */

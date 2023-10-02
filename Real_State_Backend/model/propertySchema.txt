@@ -1,0 +1,17 @@
+All required data list in Schema
+
+user
+ppdid
+property_type
+price
+property_age
+ownerShip
+bank_lone
+ //area
+furnished
+facing
+owner_name
+email
+city
+pincode
+address

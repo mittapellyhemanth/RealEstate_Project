@@ -1,0 +1,145 @@
+.formdiv,.profile{
+    width: 100%;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.profile{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.infodetails{
+  border-bottom:2px solid black ;
+}
+.infotag{
+  width: 50px;
+  border-radius: 58%;
+  height: 50px;
+  color: #fbfbfb;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  background-color: black;
+}
+.information{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.avatar{
+  width: 250px;
+  max-width: 55%;
+  max-height: 45%;
+  
+  height: 250px;
+  border-radius: 58%;
+  margin-bottom:10% ;
+}
+.pages{
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.profile{
+  flex-direction: column;
+}
+.details{
+  display: flex;
+  height: 70px;
+ 
+  justify-content: space-between;
+}
+.nav-item{
+  margin-top: 10px;
+}
+.fs-4{
+  font-size: large;
+}
+.ms-1{
+  margin-left: 5px;
+}
+body {
+  background-color: #fbfbfb;
+}
+@media (min-width: 991.98px) {
+  main {
+    padding-left: 240px;
+  }
+}
+.nav-pills .nav-item .nav-link{
+  color: #817d7d;
+}
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 58px 0 0; /* Height of navbar */
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  width: 240px;
+  z-index: 600;
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+.sidebar .active {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+.popup{
+    width: 350px;
+    height: 150px;
+}
+.error{
+    color: rgb(243, 52, 52);
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.formtag{
+    border-radius: 10px;
+    height: 500px;
+    max-height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 25px;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.custom-btn {
+    width: 94%;
+    background-color: #4C57B6;
+    max-width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: white;
+    
+
+}
+.linkform{
+    color: #4C57B6!important;
+     font-weight: "bold"; 
+     font-size: "1.3rem";   
+}
+.logo{
+    width: 200px;
+    height: 200px;
+    border-radius: 58%;
+}

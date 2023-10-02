@@ -1,0 +1,272 @@
+
+--------------- Frontend --------------------------
+Frontend part consists of HTML5 and Bootstrap4 for layouting purpose alongside jQuery library as a dependency manager. The frontend code resides inside `public
+frontend project structure for real estate
+```
+realEstateFrontend(FRONTEND PROJECT)
+├── src                     # Source code directory
+│   ├── components        # Components Directory
+│   │   ├── HeaderComponent/HeaderComponent.jsx
+│   │   ├── FooterComponent/FooterComponent.jsx
+│   │   ├── SearchBarComponent/SearchBarComponent.jsx
+│   │   ├── ListingsComponent/ListingsComponent.jsx
+│   │   ├── ListingItemComponent/ListingItemComponent.jsx
+│   │   ├── LoginFormComponent/LoginFormComponent.jsx
+│   │   ├── RegisterFormComponent/RegisterFormComponent.jsx
+│   │   ├── AddPropertyFormComponent/AddPropertyFormComponent.jsx
+│   ├── assets             # Assets (images, icons etc.) Directory
+│   │   ├── images         # Images Directory
+│   │   │    ├── logo-white.png  # Logo Image
+│   │   │    ├── searchIcon.svg     # Search Icon image
+│   ├── config.json             // Application configuration settings
+│   ├── package.json            // Node dependencies list
+│   ├── server.js               // Server entry point script
+└── test
+└── unit
+
+
+You can toggle/switch the web pages by hiting URLs listed below
+
+    URL : - http://localhost:3000 => SignIn page will be displyed
+    # SignUp page 
+            http://localhost:3000/SignUp 
+    # Home page (userId, username and property details will be displayed and we can add new properties by clicking the button Add property)
+            http://localhost:3000/home 
+            
+    # to add basic details
+            http://localhost:3000/addproperty/basic_details 
+    # property_details
+            http://localhost:3000/addproperty/property_details
+    # general_info
+            http://localhost:3000/addproperty/general_info
+    # location_info
+            http://localhost:3000/addproperty/location_info
+
+
+
+---------------------------- Backend -----------------------------
+
+Backend is built using ExpressJS framework with MongoDB database to store the information about users and their properties.
+Backend is built using Express framework of node js which provides the following features:
+- Routing - Routes are used to define how an application responds when it receives requests from clients or other applications.
+- Routing
+- Middleware support
+- Template engine with layouts
+- Session management
+- Flash messages
+- CSRF protection   
+- Error handling
+- RESTful API's
+- etc...
+Express uses middleware to provide common functionalities across all routes in an application. For example,
+express comes bundled with body parser module that can be used
+
+The project structure will be similar to this one:
+project_name (REAL ESTATE)
+├── app
+│   ├── controllers
+|       └── homeController.js // Home controller file
+|           |── index.js         // Index route handler function
+|           ...                 // Other routes handlers functions
+│   ├── middleware             // Custom middlewares folder
+│   │   └── auth.js     // Authenticate user before accessing protected pages
+│   ├── models                  // Database Models Folder
+│   │   └── UserModel            // User Model File
+        └── PropertyModel       // properties Model File  
+        
+│   ├── public                  // Public assets folder
+│   │   ├── css                // CSS files go here
+│   │   ├── images              // Image files goes here
+│   │   └── javascript          // JavaScript files goes here
+│   ├── services               // Services folder contains helper methods used by other parts in application
+│   │   └── userService.js      // Service that interacts with database layer
+│   ├──
+│   │   └── 
+│   ├── config.json             // Application configuration settings
+│   ├── package.json            // Node dependencies list
+│   ├── server.js               // Server entry point script
+└── test
+└── unit
+```
+
+HTTP API Requests/URL
+================================ For User ============ 
+
+=> To register / SignUp : http://localhost:8081/user/v1/register        
+    {
+        "email" : "ee@gmail.com",
+        "password" : "12345678"
+    }
+
+        {
+        "message": "User Created successfully!!",
+        "data": {
+            "email": "ee@gmail.com",
+            "password": "$2b$10$X8BdBRK4hIOkrrnFeJS3pegF6MhLaKaVRbCuiCKdNc0UUACBC4s/K",
+            "unique_id": "06PPD100",
+            "_id": "651528e3195ecc048ed52141",
+            "__v": 0
+        }
+    }
+
+=> When we try to register with same credentials 
+    {
+    "email" : "ee@gmail.com",
+    "password" : "12345678"
+}
+
+{
+    "message": "Email already exist!!",
+    "errDesc": {
+        "index": 0,
+        "code": 11000,
+        "keyPattern": {
+            "email": 1
+        },
+        "keyValue": {
+            "email": "ee@gmail.com"
+        }
+    }
+}
+
+
+----------------------------------------------------------------
+
+=> For Login/SignIn -> http://localhost:8081/user/v1/login 
+    {
+        "email" : "ee@gmail.com",
+        "password" : "12345678"
+    }
+
+    {
+        "message": "Login credential matched!!",
+        "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVlQGdtYWlsLmNvbSIsImlkIjoiNjUxNTI4ZTMxOTVlY2MwNDhlZDUyMTQxIiwidXNlcmlkIjoiMDZQUEQxMDAiLCJpYXQiOjE2OTU4ODU4NTAsImV4cCI6MTY5NTk3MjI1MH0.52-G6JK7hcDasbfMWJOeynApQ66mxP7On1Gc1TcEBZA",
+        "name": "ee",
+        "email": "ee@gmail.com",
+        "userId": "06PPD101"
+    }
+
+=> When we try to login with same Email id but different password 
+
+http://localhost:8081/user//v1/login
+
+    {
+        "email" : "ee@gmail.com",
+        "password" : "12345"
+    }
+
+    {
+        "message": "Email or password does not match!!"
+    }
+
+=>  When we trying to login with different credentials
+
+http://localhost:8081/user//v1/login
+{
+    "email" : "e@gmail.com",
+    "password" : "12345"
+}
+
+{
+    "message": "Email is not registered with us.."
+}
+
+
+------------------------------------- For Properties/ To add new data -----------------------------------
+
+=> => To add/post New property_details  
+
+http://localhost:8081/prop/addproperty
+
+In body need to provide property_details 
+    {
+    "user": "651528e3195ecc048ed52141",     
+    "unique_id": "06PPD103",   
+    "ppdid": "ppdid123",
+    "views": "10",
+    "daysleft": "20",
+    "status": "unsold",
+    "property_type" : "Other",
+    "price" : 25000
+    ...
+    ...
+    ...
+}
+
+----------------------------------
+
+=> to get the property_details  
+
+1st SignUp/SignIn , aftere SignIn , we will get One TOKEN copy & paste that Token in HEADERS IN POSTMAN like
+
+key = Authorization
+Value  = (Token VAlue ) eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY0BnbWFpbC5jb20iLCJpZCI6IjY1MTU0MGM2ZGM3YmJiNDE2MzU1YzQwYSIsInVzZXJpZCI6IjA2UFBEMTAxIiwiaWF0IjoxNjk1ODkxODQ5LCJleHAiOjE2OTU5NzgyNDl9._gd-_uE2cbP6xTeVvWfCOP87ofgMbqblTGIYht8pr8Y
+            This token value we will get while SignIn successfully 
+When we want to fetch the data 
+
+
+http://localhost:8081/prop/getproperty ? id  / 
+http://localhost:8081/prop/getproperty?65154149dc7bbb416355c410
+
+{
+    "message": "Property details fetched successfully",
+    "data": []  // empty array , becz i havn't added property_details yet 
+}
+
+
+----------------------- Frontend --------------------------------
+=> for frontend
+https://github.com/pratik-choudhari/RealEstateProjectFrontend.git
+
+
+
+Setting up a development environment for both frontend and backend development involves several steps, including installing the necessary software and tools
+
+Node.js (backend) and React.js (frontend) development
+
+1. Node.js Installation
+2. Package Manager (npm)
+	Create a Node.js Project 
+	Install Frameworks
+	Database Setup
+3. Frontend (React.js) Environment Setup
+	Create a React App
+
+development environment ready for both frontend (React.js) and backend (Node.js) development 
+
+
+Creating a real estate website involves several data models
+
+Data model representing properties for sold/unsold. It should include details such as property type like 
+PPD ID, Property, Cantact details, price, area, views, 
+
+User Authentication
+Transactions and History
+......
+.......
+........
+
+1) http://localhost:3000/ 
+    Redirecting to the SignIn Page (if the user is not registered) 
+    click on SignUp 
+2) http://localhost:3000/register
+    Redirecting to the SignUp Page 
+3) http://localhost:3000/login 
+    give Your credential and Login In 
+    redirecting to properties page 
+4) http://localhost:3000/properties
+    show all available properties in the database
+    when we click on the button addproperty, the page will be redirecting to the 
+5) http://localhost:3000/basic
+    Now add details of the new properties, thier will be trwo buttons (previous, save & continue)
+    Click on the save & continue 
+    r=the page will br redirecting to the 
+6) http://localhost:3000/details
+    Some more details we need to add like 
+    price, size, views click on the save and continue
+7)http://localhost:3000/location
+
+
+
+----------------------------------------------
+https://real-estate-backend-i7ci.onrender.com 

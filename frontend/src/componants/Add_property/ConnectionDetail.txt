@@ -1,0 +1,6 @@
+
+
+
+To use add Property page we need to import ContextFunction from ContextProvider
+I am using PropertyContext as Context to pass data into component
+// AddpropertyRouter Component is router wrapper which will render as per url
