@@ -65,33 +65,6 @@ const upload = multer({ storage });
 
 //Get API for search
 
-// propertyRouter.get("/v1/getproperty/:id",auth,async (req,res)=>{
-
-//     try {
-//         console.log('getProperty')
-//         const id =await req.params.id.toUpperCase();
-    
-    
-//        await Property.findOne({ ppdid: id }).then(result => {
-//             if (result) {
-//                 res.status(200).json({
-//                     data: result
-//                 })
-//             } else {
-//                 res.status(400).json({
-//                     message: "Id not Found"
-//                 })
-//             }
-//         })
-//     } catch (error) {
-//         res.status(500).json({
-//             message: "Internal server error!!",
-//             Err: err
-//         })
-//     }
-
- 
-// })
 const SearchController = require('../Controllers/PropertyControllers/Search');
 propertyRouter.get("/v1/getproperty/:id",auth,SearchController.search)
 

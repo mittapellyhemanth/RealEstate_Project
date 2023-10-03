@@ -39,7 +39,7 @@ export default function GeneralEdit({ SetPage }) {
                             <br />
                             <label htmlFor="postedby">Posted By</label>
                             <br />
-                            <select id="postedby" onChange={(e) => {
+                            <select id="postedby" className='select-box' onChange={(e) => {
                                 SetnewData({
                                     ...newData,
                                     postedby: e.target.value
@@ -54,7 +54,7 @@ export default function GeneralEdit({ SetPage }) {
                             <br />
                             <label htmlFor="featured">Featured Package</label>
                             <br />
-                            <select id="featured" onChange={(e) => {
+                            <select id="featured" className='select-box' onChange={(e) => {
                                 SetnewData({
                                     ...newData,
                                     featured: e.target.value
@@ -102,7 +102,7 @@ export default function GeneralEdit({ SetPage }) {
                             <br />
                             <label htmlFor="saletype">Sale Type</label>
                             <br />
-                            <select id="saletype" onChange={(e) => {
+                            <select id="saletype" className='select-box' onChange={(e) => {
                                 SetnewData({
                                     ...newData,
                                     saletype: e.target.value
@@ -116,7 +116,7 @@ export default function GeneralEdit({ SetPage }) {
                             <br />
                             <label htmlFor="ppdpackage">PPD Package</label>
                             <br />
-                            <select id="ppdpackage" onChange={(e) => {
+                            <select id="ppdpackage" className='select-box' onChange={(e) => {
                                 SetnewData({
                                     ...newData,
                                     ppdpackage: e.target.value

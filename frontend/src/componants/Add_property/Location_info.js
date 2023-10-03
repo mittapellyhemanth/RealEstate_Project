@@ -97,7 +97,7 @@ export default function Location() {
                                 <br />
                                 <label htmlFor="addressarea">Area</label>
                                 <br />
-                                <select id="addressarea" onChange={(e) => {
+                                <select id="addressarea" className='select-box' onChange={(e) => {
                                     OnClickLocation_info(e, "addressarea", Location_info, SetLocation_info, AddProperty, SetAddProperty)
                                 }}
                                     value={Location_info.addressarea}  >
@@ -126,7 +126,7 @@ export default function Location() {
                             <div className="form_second">
                                 <label htmlFor="city">City</label>
                                 <br />
-                                <select id="city" onChange={(e) => {
+                                <select id="city" className='select-box' onChange={(e) => {
                                     OnClickLocation_info(e, "city", Location_info, SetLocation_info, AddProperty, SetAddProperty)
                                 }} required
                                     value={Location_info.city} >
@@ -139,7 +139,7 @@ export default function Location() {
 
                                 <label htmlFor="pincode">Pincode</label>
                                 <br />
-                                <select id="pincode" onChange={(e) => {
+                                <select id="pincode" className='select-box' onChange={(e) => {
                                     OnClickLocation_info(e, "pincode", Location_info, SetLocation_info, AddProperty, SetAddProperty)
                                 }} required
                                     value={Location_info.pincode} >

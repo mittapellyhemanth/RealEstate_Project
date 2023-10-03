@@ -48,7 +48,7 @@ export default function PropertyEdit({ SetPage }) {
                             <br />
                             <label htmlFor="bhk">No. of BHK</label>
                             <br />
-                            <select id="bhk" onChange={(e) => {
+                            <select id="bhk" className='select-box' onChange={(e) => {
                                 SetnewData({
                                     ...newData,
                                     bhk: e.target.value
@@ -66,7 +66,7 @@ export default function PropertyEdit({ SetPage }) {
                             <label htmlFor="attached">Attached</label>
                             <br />
 
-                            <select id="attached" onChange={(e) => {
+                            <select id="attached" className='select-box' onChange={(e) => {
                                 SetnewData({
                                     ...newData,
                                     attached: e.target.value
@@ -79,7 +79,7 @@ export default function PropertyEdit({ SetPage }) {
                             <br />
                             <label htmlFor="furnished">Furnished</label>
                             <br />
-                            <select id="furnished" onChange={(e) => {
+                            <select id="furnished" className='select-box' onChange={(e) => {
                                 SetnewData({
                                     ...newData,
                                     furnished: e.target.value
@@ -94,7 +94,7 @@ export default function PropertyEdit({ SetPage }) {
                             <br />
                             <label htmlFor="lift">Lift</label>
                             <br />
-                            <select id="lift" onChange={(e) => {
+                            <select id="lift" className='select-box' onChange={(e) => {
                                 SetnewData({
                                     ...newData,
                                     lift: e.target.value
@@ -108,7 +108,7 @@ export default function PropertyEdit({ SetPage }) {
                             <br />
                             <label htmlFor="facing">Facing</label>
                             <br />
-                            <select id="facing" onChange={(e) => {
+                            <select id="facing" className='select-box' onChange={(e) => {
                                 SetnewData({
                                     ...newData,
                                     facing: e.target.value
@@ -137,7 +137,7 @@ export default function PropertyEdit({ SetPage }) {
                             <br />
                             <label htmlFor="area_unit">Area Unit</label>
                             <br />
-                            <select id="area_unit" onChange={(e) => {
+                            <select id="area_unit" className='select-box' onChange={(e) => {
                                 SetnewData({
                                     ...newData,
                                     area_unit: e.target.value
@@ -152,7 +152,7 @@ export default function PropertyEdit({ SetPage }) {
                             <br />
                             <label htmlFor="floor" >No. of floor</label>
                             <br />
-                            <select id="floor" onChange={(e) => {
+                            <select id="floor" className='select-box' onChange={(e) => {
                                 SetnewData({
                                     ...newData,
                                     floor: e.target.value
@@ -168,7 +168,7 @@ export default function PropertyEdit({ SetPage }) {
                             <br />
                             <label htmlFor="western">Western Toilet</label>
                             <br />
-                            <select id="western" onChange={(e) => {
+                            <select id="western" className='select-box' onChange={(e) => {
                                 SetnewData({
                                     ...newData,
                                     western: e.target.value
@@ -182,7 +182,7 @@ export default function PropertyEdit({ SetPage }) {
                             <br />
                             <label htmlFor="parking">Car Parking</label>
                             <br />
-                            <select id="parking" onChange={(e) => {
+                            <select id="parking"  className='select-box' onChange={(e) => {
                                 SetnewData({
                                     ...newData,
                                     parking: e.target.value

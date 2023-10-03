@@ -3,6 +3,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { RiArrowGoBackLine } from "react-icons/ri";
 import "../styles/addproperty.css"
 function PropertyView() {
+  const navigate = useNavigate();
+  let token = localStorage.getItem("token");
+
+
   const location = useLocation();
   const table = location.state;
   // console.log(tableDetails);
@@ -14,10 +18,8 @@ function PropertyView() {
   useEffect(() => { }, [page]);
 
 
-
-  let token = localStorage.getItem("token");
   let id = localStorage.getItem(("userID"));
-  const navigate = useNavigate();
+  
   const [pathFlag, setPathFlag] = useState(false);
   const [path, setPath] = useState("");
   const [data, setData] = useState([]);
@@ -33,6 +35,7 @@ function PropertyView() {
   let url = `${process.env.REACT_APP_BASE_URL}/prop/v1/getproperty/${table.ppdid}`;
   useEffect(() => {
       // let token = localStorage.getItem("token");
+     
       // console.log(token);
       fetch(url, {
           method: "GET",

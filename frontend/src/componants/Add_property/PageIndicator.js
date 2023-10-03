@@ -13,7 +13,7 @@ export default function PageIndicator() {
             {IsEdit === true ?
                 <h2 className="prop_heading">Update Property</h2> :
                 <h2 className="prop_heading" 
-                    style={{fontSize:"25px"}}
+                    style={{fontSize:"16px"}}
                     >Add New Property</h2>
             }
             <div className="page_indicator" style={{padding:"20px",margin:"10px", height:"40px", width:"80%"}}>

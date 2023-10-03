@@ -50,7 +50,7 @@ export default function General_info() {
                             <br />
                             <label htmlFor="postedby">Posted By</label>
                             <br />
-                            <select id="postedby" onChange={(e) => {
+                            <select id="postedby" className='select-box' onChange={(e) => {
                                 OnClickGeneral_info(e, "postedby", General_info, SetGeneral_info)
                             }}
                                 value={General_info.postedby}  >
@@ -62,7 +62,7 @@ export default function General_info() {
                             <br />
                             <label htmlFor="featured">Featured Package</label>
                             <br />
-                            <select id="featured" onChange={(e) => {
+                            <select id="featured" className='select-box' onChange={(e) => {
                                 OnClickGeneral_info(e, "featured", General_info, SetGeneral_info)
                             }}
                                 value={General_info.featured} >
@@ -104,7 +104,7 @@ export default function General_info() {
                             <br />
                             <label htmlFor="saletype">Sale Type</label>
                             <br />
-                            <select id="saletype" onChange={(e) => {
+                            <select id="saletype" className='select-box' onChange={(e) => {
                                 OnClickGeneral_info(e, "saletype", General_info, SetGeneral_info)
                             }}
                                 value={General_info.saletype} >
@@ -115,7 +115,7 @@ export default function General_info() {
                             <br />
                             <label htmlFor="ppdpackage">PPD Package</label>
                             <br />
-                            <select id="ppdpackage" onChange={(e) => {
+                            <select id="ppdpackage" className='select-box' onChange={(e) => {
                                 OnClickGeneral_info(e, "ppdpackage", General_info, SetGeneral_info)
                             }}
                                 value={General_info.ppdpackage}  >

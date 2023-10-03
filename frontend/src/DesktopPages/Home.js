@@ -15,6 +15,8 @@ import { PropertyContext } from '../componants/Add_property/ContextProvider';
 
 const HomePage = () => {
 
+
+
 const {SetIsEdit,SetBasicDetail,SetPropertyDetail,SetGeneral_info,SetLocation_info,SetAddProperty,SetPageNav} = useContext(PropertyContext);
 useEffect(()=>{
 

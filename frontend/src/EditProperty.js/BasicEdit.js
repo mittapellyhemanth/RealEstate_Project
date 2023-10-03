@@ -36,7 +36,7 @@ export default function BasicEdit({ SetPage }) {
                         <div className="form_first">
                             <label htmlFor="property_type">Property Type</label>
                             <br />
-                            <select id="property_type"
+                            <select id="property_type" className='select-box'
                                 onChange={(e) => {
                                     SetnewData({
                                         ...newData,
@@ -63,7 +63,7 @@ export default function BasicEdit({ SetPage }) {
                             <br />
                             <label htmlFor="property_age">Property Age</label>
                             <br />
-                            <select id="property_age" onChange={(e) => {
+                            <select id="property_age" className='select-box' onChange={(e) => {
                                 SetnewData({
                                     ...newData,
                                     property_age: e.target.value
@@ -91,7 +91,7 @@ export default function BasicEdit({ SetPage }) {
                         <div className="form_Second">
                             <label htmlFor="negotiable">Negotiable</label>
                             <br />
-                            <select id="negotiable" onChange={(e) => {
+                            <select id="negotiable" className='select-box' onChange={(e) => {
                                 SetnewData({
                                     ...newData,
                                     negotiable: e.target.value
@@ -104,7 +104,7 @@ export default function BasicEdit({ SetPage }) {
                             <br />
                             <label htmlFor="ownerShip">Ownership</label>
                             <br />
-                            <select id="ownerShip" onChange={(e) => {
+                            <select id="ownerShip" className='select-box' onChange={(e) => {
                                 SetnewData({
                                     ...newData,
                                     ownerShip: e.target.value
@@ -117,7 +117,7 @@ export default function BasicEdit({ SetPage }) {
                             <br />
                             <label htmlFor="property_approved">Property Approved</label>
                             <br />
-                            <select id="property_approved" onChange={(e) => {
+                            <select id="property_approved" className='select-box' onChange={(e) => {
                                 SetnewData({
                                     ...newData,
                                     property_approved: e.target.value
@@ -130,7 +130,7 @@ export default function BasicEdit({ SetPage }) {
                             <br />
                             <label htmlFor="bank_loan">Bank Loan</label>
                             <br />
-                            <select id="bank_loan" onChange={(e) => {
+                            <select id="bank_loan" className='select-box' onChange={(e) => {
                                 SetnewData({
                                     ...newData,
                                     bank_loan: e.target.value

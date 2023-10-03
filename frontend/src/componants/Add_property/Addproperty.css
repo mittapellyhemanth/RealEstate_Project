@@ -1,13 +1,15 @@
 /*Router is parent  of  form*/
 .router {
-    position:absolute;
-    height:800px ;
+    /* position:absolute; */
+    height:100vh;
+    width: 70%;
 
 }
 
 /* outer_form class name given to form tag*/
 .outer_form {
-    width: 1050px;
+    width: 900px;
+    padding: 50px;
     border-radius: 30px;
     position: relative;
     left: 10px;
@@ -16,14 +18,14 @@
 }
 
 .form {
-    width: 1000px;
+    width: 800px;
     /* height: 656px;*/
     height: auto;
     flex-shrink: 0;
     border-radius: 20px;
 
     display: flex;
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
 }
 
 /* Left side input margin*/
@@ -34,14 +36,28 @@
 
 /* Input tag */
 input {
-    width: 450px;
-    height: 60px;
+    width: 300px;
+    height: 40px;
     flex-shrink: 0;
-    border-radius: 8px;
+    border-radius: 5px;
     border: 1px solid #C3C3C3;
 
 }
-
+input:focus{
+    outline: none;
+    border: 3px solid skyblue;
+}
+.select-box{
+    width: 300px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 1px solid #C3C3C3;
+}
+.select-box:focus{
+    outline: none;
+    border: 3px solid skyblue;
+}
 /* Select Tag */
 select {
     width: 450px;
@@ -71,7 +87,7 @@ span {
 label {
     color: #7D7D7D;
     font-family: Source Sans Pro;
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -84,7 +100,7 @@ label {
 .prop_heading {
     color: #7D7D7D;
     font-family: Source Sans Pro;
-    font-size: 25px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -95,14 +111,15 @@ label {
 
 /*button div wrapper*/
 .btn {
-    text-align-last: center;
-    margin-left: 370px;
+    text-align: center;
+    margin-left:250px;
+    margin-top:15px ;
 }
 
 /* Right side button*/
 .btn2 {
-    width: 160px;
-    height: 50px;
+    width: 100px;
+    height: 30px;
     flex-shrink: 0;
     border-radius: 500px;
     background: #4C57B6;
@@ -114,12 +131,13 @@ label {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    margin-top: 15px;
 }
 
 /* left side button style*/
 .btn1 {
-    width: 160px;
-    height: 50px;
+    width: 100px;
+    height: 30px;
     flex-shrink: 0;
     border-radius: 500px;
     background: #6AB4F8;
@@ -131,6 +149,7 @@ label {
     font-weight: 600;
     line-height: normal;
     margin-right: 40px;
+    margin-top: 15px;
     border: none;
 }
 
@@ -163,7 +182,7 @@ label {
 .indi {
     color: #BFBFBF;
     font-family: Source Sans Pro;
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -205,8 +224,10 @@ transmitting data to backend and waiting for response*/
 
 /*Setting index for sidebar*/
 .Sidebar {
+width: 140%;
 
     z-index: -1;
+    
 }
 
 .second_wrapper {
@@ -217,23 +238,25 @@ transmitting data to backend and waiting for response*/
 }
 
 .blue {
-    width: 187px;
-    height: 60px;
+    width: fit-content;
+    height: fit-content;
     flex-shrink: 0;
-    border-radius: 500px;
+    border-radius: 20px;
     background: #4C57B6;
     box-shadow: 0px 13px 25px 0px rgba(0, 0, 0, 0.15);
     color: #FFF;
     font-family: Source Sans Pro;
-    font-size: 20px;
+    font-size: 15px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     text-align: center;
     /* border-top: none; */
     /* top: 15px; */
-    position: relative;
-    padding-top: 15px;
+    /* position: relative;
+    padding-top: 15px; */
+    padding: 10px;
+    margin-left: 5px;
 }
 
 

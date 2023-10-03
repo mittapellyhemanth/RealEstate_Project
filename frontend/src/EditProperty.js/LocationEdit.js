@@ -82,7 +82,7 @@ export default function LocationEdit({ SetPage }) {
                                 <br />
                                 <label htmlFor="addressarea">Area</label>
                                 <br />
-                                <select id="addressarea" onChange={(e) => {
+                                <select id="addressarea" className='select-box' onChange={(e) => {
                                     SetnewData({
                                         ...newData,
                                         addressarea: e.target.value
@@ -120,7 +120,7 @@ export default function LocationEdit({ SetPage }) {
                             <div className="form_second">
                                 <label htmlFor="city">City</label>
                                 <br />
-                                <select id="city" onChange={(e) => {
+                                <select id="city" className='select-box' onChange={(e) => {
                                     SetnewData({
                                         ...newData,
                                         city: e.target.value
@@ -135,7 +135,7 @@ export default function LocationEdit({ SetPage }) {
 
                                 <label htmlFor="pincode">Pincode</label>
                                 <br />
-                                <select id="pincode" onChange={(e) => {
+                                <select id="pincode" className='select-box' onChange={(e) => {
                                     SetnewData({
                                         ...newData,
                                         pincode: e.target.value

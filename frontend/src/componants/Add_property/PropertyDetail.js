@@ -52,7 +52,7 @@ export default function PropertyDetail() {
                     <br />
                     <label htmlFor="bhk">No. of BHK</label>
                     <br />
-                    <select id="bhk" onChange={(e) => {
+                    <select id="bhk" className='select-box' onChange={(e) => {
                         OnClickPropertyDetail(e, "bhk",PropertyDetail, SetPropertyDetail);
                     }} required
                         value={PropertyDetail.bhk} >
@@ -67,7 +67,7 @@ export default function PropertyDetail() {
                     <label htmlFor="attached">Attached</label>
                     <br />
 
-                    <select id="attached" onChange={(e) => {
+                    <select id="attached" className='select-box' onChange={(e) => {
                         OnClickPropertyDetail(e, "attached",PropertyDetail, SetPropertyDetail);
                     }} value={PropertyDetail.attached} >
                         <option value="" disabled >Attached</option>
@@ -77,7 +77,7 @@ export default function PropertyDetail() {
                     <br />
                     <label htmlFor="furnished">Furnished</label>
                     <br />
-                    <select id="furnished" onChange={(e) => {
+                    <select id="furnished" className='select-box' onChange={(e) => {
                         OnClickPropertyDetail(e, "furnished",PropertyDetail, SetPropertyDetail);
                     }} required
                         value={PropertyDetail.furnished} >
@@ -89,7 +89,7 @@ export default function PropertyDetail() {
                     <br />
                     <label htmlFor="lift">Lift</label>
                     <br />
-                    <select id="lift" onChange={(e) => {
+                    <select id="lift" className='select-box' onChange={(e) => {
                         OnClickPropertyDetail(e, "lift",PropertyDetail, SetPropertyDetail);
                     }}
                         value={PropertyDetail.lift}>
@@ -100,7 +100,7 @@ export default function PropertyDetail() {
                     <br />
                     <label htmlFor="facing">Facing</label>
                     <br />
-                    <select id="facing" onChange={(e) => {
+                    <select id="facing" className='select-box' onChange={(e) => {
                         OnClickPropertyDetail(e, "facing",PropertyDetail, SetPropertyDetail);
                     }} required
                         value={PropertyDetail.facing} >
@@ -123,7 +123,7 @@ export default function PropertyDetail() {
                     <br />
                     <label htmlFor="area_unit">Area Unit</label>
                     <br />
-                    <select id="area_unit" onChange={(e) => {
+                    <select id="area_unit" className='select-box' onChange={(e) => {
                         OnClickPropertyDetail(e, "area_unit",PropertyDetail, SetPropertyDetail);
                     }} required
                         value={PropertyDetail.area_unit} >
@@ -135,7 +135,7 @@ export default function PropertyDetail() {
                     <br />
                     <label htmlFor="floor" >No. of floor</label>
                     <br />
-                    <select id="floor" onChange={(e) => {
+                    <select id="floor" className='select-box' onChange={(e) => {
                         OnClickPropertyDetail(e, "floor",PropertyDetail, SetPropertyDetail);
                     }} value={PropertyDetail.floor} >
                         <option value="" disabled >Select No. of Floor</option>
@@ -148,7 +148,7 @@ export default function PropertyDetail() {
                     <br />
                     <label htmlFor="western">Western Toilet</label>
                     <br />
-                    <select id="western" onChange={(e) => {
+                    <select id="western" className='select-box' onChange={(e) => {
                         OnClickPropertyDetail(e, "western",PropertyDetail, SetPropertyDetail);
                     }}
                         value={PropertyDetail.western} >
@@ -159,7 +159,7 @@ export default function PropertyDetail() {
                     <br />
                     <label htmlFor="parking">Car Parking</label>
                     <br />
-                    <select id="parking" onChange={(e) => {
+                    <select id="parking" className='select-box' onChange={(e) => {
                         OnClickPropertyDetail(e, "parking",PropertyDetail, SetPropertyDetail);
                     }}
                         value={PropertyDetail.parking} >

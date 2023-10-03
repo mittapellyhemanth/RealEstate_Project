@@ -8,6 +8,7 @@ import Loader from "../componants/Add_property/Loader"
 
 
 const LogIn = () => {
+  
   const [loader, Setloader] = useState(false)
   const [err,setError] = useState('')
 const[sucess,setSucess] = useState('')
@@ -21,7 +22,8 @@ const[sucess,setSucess] = useState('')
     Setloader(true)
     const { userid, password } = details;
     if (userid === "" || password === "") {
-      alert("Email or paasword should not be empty")
+      Setloader(false)
+    return  setError("Email or paasword should not be empty")
     }
     let url =`${process.env.REACT_APP_BASE_URL}/user/v1/login`;
     axios

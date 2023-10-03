@@ -8,8 +8,10 @@ import { OnClickBasicDetail } from "./OnClickLogic";
 import Sidebar from "../Sidebar";
 import Nav from "../Nav";
 
-export default function BasicDetail() {
 
+export default function BasicDetail() {
+  
+    
     
     const { BasicDetail, SetBasicDetail}=useContext(PropertyContext)
 
@@ -22,7 +24,11 @@ export default function BasicDetail() {
     <div className="second_wrapper">
     <div className="Nav"><Nav/></div>
     <div>
+        <div className="pageIndicator">
+
         <PageIndicator />
+        </div>
+     <div className="menu">
         
         <form action="#" className="outer_form" >
             <div className="form">
@@ -30,7 +36,7 @@ export default function BasicDetail() {
                 <div className="form_first">
                     <label htmlFor="property_type">Property Type</label>
                     <br />
-                    <select id="property_type"
+                    <select id="property_type" className="select-box"
                         onChange={(e) => {
                             OnClickBasicDetail(e, "property_type",BasicDetail, SetBasicDetail)
                         }}
@@ -51,7 +57,7 @@ export default function BasicDetail() {
                     <br />
                     <label htmlFor="property_age">Property Age</label>
                     <br />
-                    <select id="property_age" onChange={(e) => {
+                    <select id="property_age" className='select-box' onChange={(e) => {
                         OnClickBasicDetail(e, "property_age",BasicDetail, SetBasicDetail)
                     }} required value={BasicDetail.property_age} >
                         <option value="" disabled >Select Property Age</option>
@@ -73,7 +79,7 @@ export default function BasicDetail() {
                 <div className="form_Second">
                     <label htmlFor="negotiable">Negotiable</label>
                     <br />
-                    <select id="negotiable" onChange={(e) => {
+                    <select id="negotiable" className='select-box' onChange={(e) => {
                         OnClickBasicDetail(e, "negotiable",BasicDetail, SetBasicDetail)
                     }} value={BasicDetail.negotiable} >
                         <option value="" disabled>Negotiable</option>
@@ -83,7 +89,7 @@ export default function BasicDetail() {
                     <br />
                     <label htmlFor="ownerShip">Ownership</label>
                     <br />
-                    <select id="ownerShip" onChange={(e) => {
+                    <select id="ownerShip" className='select-box' onChange={(e) => {
                         OnClickBasicDetail(e, "ownerShip",BasicDetail, SetBasicDetail)
                     }} required value={BasicDetail.ownerShip} >
                         <option value="" disabled >Select Ownership</option>
@@ -93,7 +99,7 @@ export default function BasicDetail() {
                     <br />
                     <label htmlFor="property_approved">Property Approved</label>
                     <br />
-                    <select id="property_approved" onChange={(e) => {
+                    <select id="property_approved" className='select-box' onChange={(e) => {
                         OnClickBasicDetail(e, "property_approved",BasicDetail, SetBasicDetail)
                     }} value={BasicDetail.property_approved} >
                         <option value="" disabled>Property Approved</option>
@@ -103,7 +109,7 @@ export default function BasicDetail() {
                     <br />
                     <label htmlFor="bank_loan">Bank Loan</label>
                     <br />
-                    <select id="bank_loan" onChange={(e) => {
+                    <select id="bank_loan" className='select-box'  onChange={(e) => {
                         OnClickBasicDetail(e, "bank_loan",BasicDetail, SetBasicDetail)
                     }} required value={BasicDetail.bank_loan}  >
                         <option value="" disabled>Select Bank Loan</option>
@@ -122,6 +128,7 @@ export default function BasicDetail() {
                 />
                 
         </form>
+        </div>   
         </div>
     </div>
     </div>

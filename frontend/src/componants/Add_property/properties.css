@@ -1,0 +1,11 @@
+.router {
+    /* position:absolute;
+    height:100vh;
+    width: 70%; */
+display: grid;
+grid-template-areas:
+'sidebar sidebar nav nav nav nav nav '
+'sidebar sidebar pageIndicator pageIndicator pageIndicator pageIndicator pageIndicator '
+'sidebar sidebar  menu menu menu menu menu'
+;
+}

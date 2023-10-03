@@ -17,10 +17,10 @@ PutController.put = async (req,res)=>{
             })
         }
         res.status(200).json(updateStatus) // would return updated data
-        console.log(updateStatus)
+        // console.log(updateStatus)
     }
     catch (err) {
-        console.log(err);
+        // console.log(err);
         res.status(500).json({
             message: "internal server error"
         })
