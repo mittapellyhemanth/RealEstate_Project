@@ -1,3 +1,3 @@
 # RealEstate_Project
-https://real-estate-7.netlify.app/
+https://real-estate-com.netlify.app/
 
