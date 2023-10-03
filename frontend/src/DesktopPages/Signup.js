@@ -171,7 +171,9 @@ const[sucess,setSucess] = useState('')
               height: "7%",
               background: "#4C57B6",
               borderRadius: "5px",
-              border: "none"
+              border: "none",
+              color:"white",
+              fontSize:"16px"
             }} id="form-submit">
               Sign up
             </button>

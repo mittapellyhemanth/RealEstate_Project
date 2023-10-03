@@ -14,10 +14,7 @@ const PropertySearch = ({ values,update,change }) => {
   
 
     function update(details) {
-      console.log(details._id);
-      
-      // const [change,setChange] = useState(details.status);
-      axios
+    axios
         .patch(
           `${process.env.REACT_APP_BASE_URL}/prop/v1/sold/${details._id}`,
           

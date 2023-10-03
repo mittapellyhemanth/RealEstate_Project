@@ -2,11 +2,11 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import { BsImageFill } from "react-icons/bs";
 import { BsFillEyeFill } from "react-icons/bs";
-import { MdEdit, MdModeEditOutline } from "react-icons/md";
+import {  MdModeEditOutline } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import ImageView from './ImageView';
 import {  PropertyContext } from '../Add_property/ContextProvider';
-import { FaEdit } from 'react-icons/fa';
+
 
 
 const PropertyList = () => {

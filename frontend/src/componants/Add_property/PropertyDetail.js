@@ -9,6 +9,7 @@ import PageIndicator from "./PageIndicator";
 import { OnClickPropertyDetail } from "./OnClickLogic";
 import Sidebar from "../Sidebar";
 import Nav from "../Nav"
+import Side from "./side";
 
 
 
@@ -22,7 +23,7 @@ export default function PropertyDetail() {
 
     return <div className="router">
 
-<div className="Sidebar"> <Sidebar/>
+<div className="Sidebar"> <Side/>
     
     </div>
     <div className="second_wrapper">

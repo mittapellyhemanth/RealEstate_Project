@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Sidebar from '../componants/Sidebar';
 import Nav from '../componants/Nav';
 import PageIndicator from '../componants/Add_property/PageIndicator';
+import Side from "../componants/Add_property/side";
 
 
 
@@ -23,13 +24,18 @@ export default function BasicEdit({ SetPage }) {
 
 
     return <div className="router">
-        <div className="Sidebar"> <Sidebar />
+        <div className="Sidebar"> <Side />
 
         </div>
         <div className="second_wrapper">
             <div className="Nav"><Nav /></div>
             <div>
+                <div className="PageIndicator">
+
                 <PageIndicator />
+                </div>
+                <div className="menu">
+
                 <form action="#" className="outer_form" >
                     <div className="form">
 
@@ -155,6 +161,7 @@ export default function BasicEdit({ SetPage }) {
                         }} >Save & Next</button>
                     </div>
                 </form>
+                </div>
             </div>
         </div>
     </div>

@@ -1,10 +1,10 @@
 import { useState } from "react"
 import { useContext } from "react"
 import { PropertyContext } from "../componants/Add_property/ContextProvider";
-import Sidebar from '../componants/Sidebar';
 import Nav from '../componants/Nav';
 import { IoCameraSharp } from "react-icons/io5";
 import PageIndicator from '../componants/Add_property/PageIndicator';
+import Side from "../componants/Add_property/side";
 
 
 export default function GeneralEdit({ SetPage }) {
@@ -14,13 +14,18 @@ export default function GeneralEdit({ SetPage }) {
 
 
     return <div className="router">
-        <div className="Sidebar"> <Sidebar />
+        <div className="Sidebar"> <Side />
 
         </div>
         <div className="second_wrapper">
             <div className="Nav"><Nav /></div>
             <div>
+                <div className="PageIndicator" >
+
                 <PageIndicator />
+                </div>
+                <div className="menu">
+
                 <form className="outer_form" >
                     <div className="form">
 
@@ -148,6 +153,7 @@ export default function GeneralEdit({ SetPage }) {
                         }} >Save & Next</button>
                     </div>
                 </form>
+                </div>
             </div>
         </div>
     </div>

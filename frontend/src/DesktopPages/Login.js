@@ -114,6 +114,7 @@ const[sucess,setSucess] = useState('')
               height:"35px",
               borderRadius: "5px",
               color: "white",
+              fontSize:"16px",
               padding: "5px 0",
               border:"none"
             }}

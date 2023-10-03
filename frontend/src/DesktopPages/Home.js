@@ -1,27 +1,29 @@
-import React, { useContext, useEffect } from 'react';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext, useEffect } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdOutlineClear } from "react-icons/md";
-import axios from 'axios';
-import PropertyList from '../componants/propertyListing/PropertyList';
-import PropertySearch from '../componants/propertyListing/PropertySearch';
-import Sidebar from '../componants/Sidebar';
-import Nav from "../componants/Nav"
-import { GiToken } from 'react-icons/gi';
-import { PropertyContext } from '../componants/Add_property/ContextProvider';
-
-
+import axios from "axios";
+import PropertyList from "../componants/propertyListing/PropertyList";
+import PropertySearch from "../componants/propertyListing/PropertySearch";
+import Sidebar from "../componants/Sidebar";
+import Nav from "../componants/Nav";
+import { GiToken } from "react-icons/gi";
+import { PropertyContext } from "../componants/Add_property/ContextProvider";
+import "../styles/searchBar.css";
 
 const HomePage = () => {
-
-
-
-const {SetIsEdit,SetBasicDetail,SetPropertyDetail,SetGeneral_info,SetLocation_info,SetAddProperty,SetPageNav} = useContext(PropertyContext);
-useEffect(()=>{
-
-  SetBasicDetail(
-    {
+  const {
+    SetIsEdit,
+    SetBasicDetail,
+    SetPropertyDetail,
+    SetGeneral_info,
+    SetLocation_info,
+    SetAddProperty,
+    SetPageNav,
+  } = useContext(PropertyContext);
+  useEffect(() => {
+    SetBasicDetail({
       property_type: "",
       price: "",
       negotiable: "",
@@ -29,47 +31,46 @@ useEffect(()=>{
       property_age: "",
       property_approved: "",
       property_description: "",
-      bank_loan: ""
-    }
-  );
-                SetGeneral_info({
-                  owner_name: "",
-                  mobile: "",
-                  postedby: "",
-                  saletype: "",
-                  featured: "",
-                  ppdpackage: ""
-                });
-                SetLocation_info({
-                  email: "",
-        city: "",
-        addressarea: "",
-        pincode: "",
-        address: "",
-        landmark: "",
-        longitude: "",
-        latitude: ""
-                });
-                SetPropertyDetail({
-                  length: "",
-                  breath: "",
-                  area: "",
-                  area_unit: "",
-                  bhk: "",
-                  floor: "",
-                  attached: "",
-                  western: "",
-                  furnished: "",
-                  parking: "",
-                  lift: "",
-                  electricity: "",
-                  facing: ""
-                });
-                // SetAddProperty({
+      bank_loan: "",
+    });
+    SetGeneral_info({
+      owner_name: "",
+      mobile: "",
+      postedby: "",
+      saletype: "",
+      featured: "",
+      ppdpackage: "",
+    });
+    SetLocation_info({
+      email: "",
+      city: "",
+      addressarea: "",
+      pincode: "",
+      address: "",
+      landmark: "",
+      longitude: "",
+      latitude: "",
+    });
+    SetPropertyDetail({
+      length: "",
+      breath: "",
+      area: "",
+      area_unit: "",
+      bhk: "",
+      floor: "",
+      attached: "",
+      western: "",
+      furnished: "",
+      parking: "",
+      lift: "",
+      electricity: "",
+      facing: "",
+    });
+    // SetAddProperty({
 
-                // });
-                SetPageNav("Basic")
-},[])
+    // });
+    SetPageNav("Basic");
+  }, []);
   function clearData() {
     setSearchFlag(false);
     setValues({
@@ -110,9 +111,7 @@ useEffect(()=>{
       landmark: "",
       latitude: "",
       longitude: "",
-
     });
-    
   }
   // let token = localStorage.getItem("token");
   // let id = localStorage.getItem("userID");
@@ -128,13 +127,13 @@ useEffect(()=>{
   function searchingById() {
     let token = localStorage.getItem("token");
     const headers = {
-      Authorization: token
+      Authorization: token,
     };
     // console.log(token, id);
     setSearchFlag(true);
     let url = `${process.env.REACT_APP_BASE_URL}/prop/v1/getproperty/${searchId}`;
     axios
-      .get(url,{headers})
+      .get(url, { headers })
       .then((res) => {
         console.log(res.data);
         setValues([res.data.data]);
@@ -151,28 +150,28 @@ useEffect(()=>{
     let data = { status: "Sold" };
     let token = localStorage.getItem("token");
     axios
-        .patch(
-            `${process.env.REACT_APP_BASE_URL}/prop/v1/sold/${details._id}`,
-            data,
-            {
-                headers: {
-                    'Authorization' : token
-                },
-            }
-        )
-        .then((res) => {
-            console.log(res.data);
-            setChange(false);
-            setValues([res.data.data])
-        })
-        .catch((error) => alert("Unable to sell"));
-}
+      .patch(
+        `${process.env.REACT_APP_BASE_URL}/prop/v1/sold/${details._id}`,
+        data,
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res.data);
+        setChange(false);
+        setValues([res.data.data]);
+      })
+      .catch((error) => alert("Unable to sell"));
+  }
   return (
-    <div className='container-fluid'>
-      <div className='row flex-nowrap' >
-        <Sidebar/>
-        <div className='col container' style={{ maxWidth: "80%" }}>
-          <Nav/>
+    <div className="container-fluid">
+      <div className="row flex-nowrap">
+        <Sidebar />
+        <div className="col container" style={{ maxWidth: "80%" }}>
+          <Nav />
 
           <div
             style={{
@@ -184,20 +183,14 @@ useEffect(()=>{
           >
             <div
               style={{
-                maxWidth:"200px",
-                maxHeight:"100px"
+                maxWidth: "200px",
+                maxHeight: "100px",
               }}
             >
-              <div className='input-group mb-3'>
+              <div className="search-bar">
                 <input
                   value={searchId}
                   onChange={(e) => setSearchId(e.target.value)}
-                  style={{
-                    boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-                    borderTopLeftRadius: "25px",
-                    borderBottomLeftRadius: "25px",
-                    height:"50px"
-                  }}
                   type="text"
                   className="form-control"
                   placeholder="Search by Id"
@@ -205,7 +198,7 @@ useEffect(()=>{
                   aria-describedby="basic-addon2"
                 />
                 <div
-                  className='input-group-append'
+                  className="input-group-append "
                   onClick={() => searchingById()}
                 >
                   <span
@@ -214,10 +207,10 @@ useEffect(()=>{
                       cursor: "pointer",
                       borderTopRightRadius: "25px",
                       borderBottomRightRadius: "25px",
-                      height:"50px",
-                      width:"50px"
+                      height: "40px",
+                      width: "50px",
                     }}
-                    className="input-group-text"
+                    className="input-group-text "
                     id="basic-addon2"
                   >
                     <AiOutlineSearch />
@@ -228,42 +221,46 @@ useEffect(()=>{
             <button
               type="button"
               onClick={() => {
-                navigate("/addproperty/basic_detail")
-                SetIsEdit(false)
+                navigate("/addproperty/basic_detail");
+                SetIsEdit(false);
               }}
               className="btn btn-info"
               style={{
                 fontSize: "20px",
-                fontWeight : "200px",
+                fontWeight: "200px",
                 display: "flex",
-                backgroundColor:"#6AB4F8",
+                backgroundColor: "#6AB4F8",
                 color: "whitesmoke",
                 alignItems: "center",
                 boxShadow: "0px 10px 25px rgba(0, 0, 0, 0.13)",
                 justifyContent: "center",
                 borderRadius: "35px",
-                border:"none"
+                border: "none",
+                padding:"20px 0px 20px 0px"
               }}
             >
-
-              <span className="ms-1 d-none d-sm-inline">+ Add Property</span>
+              <span
+                className="ms-2 d-none d-sm-inline"
+                style={{ fontSize: "16px" }}
+              >
+                + Add Property
+              </span>
             </button>
           </div>
           {searchFlag ? (
             <>
               <div
-                className='row'
+                className="row"
                 style={{
                   display: "flex",
                   marginTop: "15px",
                   justifyContent: "flex-end",
                   paddingRight: "35px",
-                  
                 }}
               >
                 <button
-                  type='button'
-                  onClick={()=>clearData()}
+                  type="button"
+                  onClick={() => clearData()}
                   className="btn btn-info"
                   style={{
                     fontSize: "larger",
@@ -273,8 +270,8 @@ useEffect(()=>{
                     boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
                     justifyContent: "center",
                     borderRadius: "35px",
-                    backgroundColor:"#6AB4F8",
-                    border:"none",
+                    backgroundColor: "#6AB4F8",
+                    border: "none",
                   }}
                 >
                   <MdOutlineClear />
@@ -288,10 +285,10 @@ useEffect(()=>{
               <PropertyList values={values} update={update} change={change} />
             </>
           )}
-          </div>
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default HomePage;
